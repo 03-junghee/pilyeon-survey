@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os # os 모듈을 import 합니다.
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,12 +22,24 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-rn1xjo2d-8st9t7c7h$#mr!6b!bhj*m#3t!o631)$*xhrmk4ld'
+# SECRET_KEY = 'django-insecure-rn1xjo2d-8st9t7c7h$#mr!6b!bhj*m#3t!o631)$*xhrmk4ld'
+
+# Render 환경 변수에서 SECRET_KEY를 가져오고, 없으면 기존 값을 사용합니다.
+# **주의: 이 코드를 추가한 후, 기존의 SECRET_KEY = '...' 줄은 삭제하거나 주석 처리하세요.**
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-rn1xjo2d-8st9t7c7h$#mr!6b!bhj*m#3t!o631)$*xhrmk4ld')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.render.com'] # .render.com은 Render 배포 시 자동으로 허용
+
+# Render에서 자동으로 생성된 도메인을 허용 목록에 추가합니다.
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
+# DEBUG 모드를 배포 환경에서는 비활성화합니다.
+DEBUG = 'RENDER' not in os.environ
 
 
 # Application definition
