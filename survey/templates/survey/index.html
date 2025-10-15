@@ -61,11 +61,13 @@
       <div class="logo-placeholder">💖</div>
       <h1>필연</h1>
       <p>
-        안녕하세요, 당신의 **운명적인 인연**을 찾아드리기 위한 첫 단계입니다.<br />
+        안녕하세요, 당신의 운명적인 인연을 찾아드리기 위한 첫 단계입니다.<br />
         따뜻하고 진솔한 답변으로 당신의 이상형을 완성해주세요.
       </p>
 
-      <a href="#" class="start-button">{{ start_button_text }}</a>
+      <a href="{% url 'question_page' question_id=1 %}" class="start-button"
+        >설문 시작하기</a
+      >
     </div>
   </body>
 </html>
