@@ -107,11 +107,7 @@
       <div class="idol-match">
         <h3>❤️ 당신의 이상형에 부합하는 연예인은?</h3>
         <div class="matched-idol">{{ matched_idol }}</div>
-        <p class="description-text">
-          {{ idol_description }}<br /><br />
-          **[분석 요약]** A선택 **{{ response_count_a }}개**, B선택 **{{
-          response_count_b }}개**의 결과입니다.
-        </p>
+        <p class="description-text">{{ idol_description }}<br /><br /></p>
       </div>
 
       <a href="{% url 'root' %}" class="retake-button">설문 다시 해보기</a>
