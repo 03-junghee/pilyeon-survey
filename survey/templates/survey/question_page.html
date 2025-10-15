@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>필연 설문조사 - {{ current_page }}/{{ total_pages }}</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #fff8e1; /* 연한 크림색 */
+        color: #4e342e; /* 짙은 갈색 텍스트 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        flex-direction: column;
+        padding: 20px;
+      }
+      .container {
+        background-color: #ffecb3;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        max-width: 700px;
+        width: 100%;
+      }
+      .progress {
+        font-weight: bold;
+        color: #d32f2f;
+        margin-bottom: 25px;
+        font-size: 1.2em;
+      }
+      h2 {
+        color: #d32f2f;
+        margin-bottom: 15px;
+        font-size: 1.8em;
+      }
+      .description {
+        background-color: #fffde7;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        border-left: 5px solid #f4511e;
+        font-size: 1.1em;
+        line-height: 1.6;
+      }
+      .option-group {
+        display: flex;
+        gap: 20px;
+        margin-top: 30px;
+      }
+      .option-box {
+        flex: 1;
+        padding: 30px;
+        background-color: white;
+        border: 2px solid #ffcc80;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      .option-box:hover {
+        background-color: #fff8e1;
+        border-color: #f4511e;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+      }
+      .option-box input[type="radio"] {
+        display: none; /* 라디오 버튼 숨기기 */
+      }
+      /* 라디오 버튼 선택 시 스타일 */
+      .option-box input[type="radio"]:checked + label {
+        background-color: #ffcc80; /* 연한 주황색으로 강조 */
+        border-color: #f4511e;
+        font-weight: bold;
+      }
+      .option-box label {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .submit-button {
+        margin-top: 40px;
+        background-color: #f4511e;
+        color: white;
+        border: none;
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-size: 1.2em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .submit-button:hover {
+        background-color: #e64a19;
+      }
+      /* 이미지 영역 (나중에 로고/마크 자리로 사용) */
+      .image-placeholder {
+        font-size: 5em;
+        color: #ffcc80;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="progress">{{ current_page }} / {{ total_pages }}</div>
+
+      <div class="image-placeholder">🖼️</div>
+
+      <h2>Q{{ question.page_number }}. {{ question.question_text }}</h2>
+
+      <div class="description">{{ question.description|linebreaksbr }}</div>
+
+      <form
+        method="POST"
+        action="{% url 'survey:question_page' page_num=current_page %}"
+      >
+        {% csrf_token %}
+        <div class="option-group">
+          <div class="option-box">
+            <input
+              type="radio"
+              id="option_a"
+              name="choice"
+              value="A"
+              required
+            />
+            <label for="option_a">{{ question.option_a_text }}</label>
+          </div>
+
+          <div class="option-box">
+            <input
+              type="radio"
+              id="option_b"
+              name="choice"
+              value="B"
+              required
+            />
+            <label for="option_b">{{ question.option_b_text }}</label>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-button">다음 질문으로</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page_title }}</title>
+    <style>
+      /* Warm & Cozy Theme */
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #fff8e1; /* 연한 크림색 배경 */
+        color: #4e342e; /* 짙은 갈색 텍스트 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        text-align: center;
+        flex-direction: column;
+      }
+      .container {
+        background-color: #ffecb3; /* 연한 노란색 컨테이너 */
+        padding: 40px 60px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+      }
+      h1 {
+        color: #d32f2f; /* 따뜻한 붉은색 (로고 대체) */
+        margin-bottom: 5px;
+        font-size: 2.5em;
+      }
+      p {
+        margin-bottom: 30px;
+        font-size: 1.1em;
+        line-height: 1.6;
+      }
+      .start-button {
+        display: inline-block;
+        background-color: #f4511e; /* 주황빛 버튼 */
+        color: white;
+        padding: 15px 30px;
+        text-decoration: none; /* 밑줄 제거 */
+        border-radius: 50px; /* 둥근 버튼 */
+        font-size: 1.2em;
+        font-weight: bold;
+        transition: background-color 0.3s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .start-button:hover {
+        background-color: #e64a19; /* 호버 시 더 진한 색 */
+      }
+      .logo-placeholder {
+        font-size: 4em;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo-placeholder">💖</div>
+      <h1>필연</h1>
+      <p>
+        안녕하세요, 당신의 **운명적인 인연**을 찾아드리기 위한 첫 단계입니다.<br />
+        따뜻하고 진솔한 답변으로 당신의 이상형을 완성해주세요.
+      </p>
+
+      <a href="#" class="start-button">{{ start_button_text }}</a>
+    </div>
+  </body>
+</html>

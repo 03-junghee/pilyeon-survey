@@ -1,0 +1,1 @@
+web: gunicorn pilyeon_project.wsgi:application
