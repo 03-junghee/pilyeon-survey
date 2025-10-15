@@ -1,0 +1,90 @@
+[
+{
+  "model": "survey.question",
+  "pk": 2,
+  "fields": {
+    "page_number": 1,
+    "question_text": "나의 연애 에너지를 충전하는 방식은?",
+    "description": "데이트를 할 때, 나는 주로 상대방에게 맞추는 편일까요, 아니면 나의 계획대로 이끌어가는 편일까요? 연애 스타일을 알려주세요.",
+    "option_a_text": "A. 상대방을 배려하며 맞춰주는 '순응형' (Feeler)",
+    "option_b_text": "B. 데이트 코스를 주도하는 '주도형' (Doer)"
+  }
+},
+{
+  "model": "survey.question",
+  "pk": 3,
+  "fields": {
+    "page_number": 2,
+    "question_text": "갈등이 생겼을 때, 나의 대처 방식은?",
+    "description": "연인과의 의견 충돌이 발생했을 때, 당신은 감정을 먼저 해결하려고 하나요, 아니면 문제의 논리적인 해결책을 찾으려고 노력하나요?",
+    "option_a_text": "A. 감정이 중요! 먼저 진심으로 사과하고 대화로 '풀어내는 타입'",
+    "option_b_text": "B. 상황이 중요! 문제의 원인과 해결책을 분석하는 '이성적인 타입'"
+  }
+},
+{
+  "model": "survey.question",
+  "pk": 4,
+  "fields": {
+    "page_number": 3,
+    "question_text": "나에게 '혼자만의 시간'이란?",
+    "description": "연애를 시작해도 나만의 시간과 공간은 중요합니다. 당신은 개인 시간을 연인과 함께 보내는 것에 대해 어떻게 생각하나요?",
+    "option_a_text": "A. 연인과 붙어 있는 시간이 곧 힐링! '함께하면 행복한 타입'",
+    "option_b_text": "B. 나만의 취미 활동은 필수! '적당한 거리가 필요한 타입'"
+  }
+},
+{
+  "model": "survey.question",
+  "pk": 5,
+  "fields": {
+    "page_number": 4,
+    "question_text": "사랑을 표현하는 방식에 대한 선호도는?",
+    "description": "따뜻함을 표현할 때, 말로 표현하는 것을 선호하나요, 아니면 행동(선물, 스킨십 등)으로 보여주는 것을 선호하나요?",
+    "option_a_text": "A. '사랑해' 같은 따뜻한 말을 아끼지 않는 '언어형'",
+    "option_b_text": "B. 작지만 정성이 담긴 선물이나 행동으로 보여주는 '행동형'"
+  }
+},
+{
+  "model": "survey.question",
+  "pk": 6,
+  "fields": {
+    "page_number": 5,
+    "question_text": "선호하는 데이트 장소의 분위기는?",
+    "description": "특별한 날, 조용하고 아늑한 분위기를 선호하나요, 아니면 활기차고 많은 사람이 있는 곳을 선호하나요?",
+    "option_a_text": "A. 아늑한 카페나 조용한 공원 등 '둘만의 공간을 선호'",
+    "option_b_text": "B. 콘서트, 맛집 탐방 등 '외부 활동과 경험을 중요시'"
+  }
+},
+{
+  "model": "survey.question",
+  "pk": 7,
+  "fields": {
+    "page_number": 6,
+    "question_text": "연애할 때 미래를 생각하는 비중은?",
+    "description": "지금 당장의 행복을 중요시하나요, 아니면 연인과의 미래 계획을 세우는 것을 중요하게 생각하나요?",
+    "option_a_text": "A. '오늘의 행복'에 집중하며 소소한 즐거움을 찾는 타입",
+    "option_b_text": "B. '현실적인 미래'를 함께 그려나가는 것을 중요시하는 타입"
+  }
+},
+{
+  "model": "survey.question",
+  "pk": 8,
+  "fields": {
+    "page_number": 7,
+    "question_text": "연애에서 중요하게 생각하는 가치는?",
+    "description": "연인과의 관계에서 끊임없이 새로운 시도와 변화를 원하나요, 아니면 익숙하고 안정적인 패턴을 선호하나요?",
+    "option_a_text": "A. 항상 새롭고 짜릿한 도전을 즐기는 '변화 추구형'",
+    "option_b_text": "B. 오래된 친구처럼 편안하고 안정적인 관계를 선호하는 '안정 추구형'"
+  }
+},
+{
+  "model": "survey.question",
+  "pk": 9,
+  "fields": {
+    "page_number": 8,
+    "question_text": "상대방의 매력 중 끌리는 부분은?",
+    "description": "상대방의 외적인 매력에 먼저 끌리나요, 아니면 내면의 따뜻함이나 대화가 잘 통하는 성격에 더 끌리나요?",
+    "option_a_text": "A. 첫인상이나 비주얼 같은 '외적인 매력'에 끌리는 타입",
+    "option_b_text": "B. 대화나 태도 같은 '내면의 매력'에 더 끌리는 타입"
+  }
+}
+]
